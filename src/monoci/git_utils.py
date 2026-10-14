@@ -1,7 +1,6 @@
 import subprocess
-from typing import List
 
-def get_changed_files(base: str = "HEAD~1", head: str = "HEAD") -> List[str]:
+def get_changed_files(base: str = "HEAD~1", head: str = "HEAD") -> list[str]:
     """Возвращает список файлов, измененных между двумя коммитами/ветками."""
     try:
         result = subprocess.run(
@@ -12,5 +11,4 @@ def get_changed_files(base: str = "HEAD~1", head: str = "HEAD") -> List[str]:
         )
         return [f.strip() for f in result.stdout.splitlines() if f.strip()]
     except subprocess.CalledProcessError as e:
-        print(f"Error getting changed files: {e}")
-        return []
+        raise RuntimeError(f"Git command failed: {e.stderr}")
