@@ -26,3 +26,16 @@ def discover_packages(root_dir: str = ".") -> Dict[str, str]:
                         packages[item.name] = str(item.relative_to(root_dir))
                         break
     return packages
+
+def get_affected_packages(changed_files: List[str], packages: Dict[str, str], root_dir: str = ".") -> Dict[str, str]:
+    """Определяет, какие пакеты затронуты изменениями в файлах."""
+    affected = {}
+    for pkg_name, pkg_path in packages.items():
+        # normalize path
+        norm_pkg_path = os.path.normpath(pkg_path)
+        for f in changed_files:
+            norm_f = os.path.normpath(f)
+            if norm_f.startswith(norm_pkg_path + os.sep) or norm_f == norm_pkg_path:
+                affected[pkg_name] = pkg_path
+                break
+    return affected

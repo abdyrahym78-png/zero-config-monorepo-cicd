@@ -1,20 +1,14 @@
-# Zero-Config Monorepo CI/CD Kit
+# 🚀 MonoCI: Zero-Config Monorepo CI/CD CLI
 
-Production-ready TurboRepo + pnpm workspaces starter kit for high-velocity teams.
+Инструмент командной строки для умного запуска задач (тестов, сборки, линтинга) **только в измененных пакетах** монорепозитория. Не требует файлов конфигурации.
 
-## Features
-- **Turborepo** caching and parallel execution.
-- **pnpm Workspaces** for lightning-fast dependency management.
-- **GitHub Actions** workflows for CI and release tagging.
+## ✨ Возможности
+- **Zero-Config**: Автоматически обнаруживает пакеты в папках `apps/`, `packages/`, `libs/`, `services/`.
+- **Multi-language**: Поддерживает Node.js (`package.json`), Python (`pyproject.toml`), Rust (`Cargo.toml`), Java (`pom.xml`), Go (`go.mod`).
+- **Git-Powered**: Анализирует `git diff` для точного определения затронутых компонентов.
+- **Красивый вывод**: Использует `rich` для удобного чтения в CI/CD логах.
 
-## Quick Start (1 Minute)
+## 📦 Установка
 ```bash
-pnpm install
-pnpm dev
+pip install .
 ```
-
-## Scripts
-- `pnpm build` - Build all packages and apps.
-- `pnpm test` - Run tests across workspace.
-- `./scripts/build-all.sh` - Full build script.
-- `./scripts/deploy.sh` - Deployment script.
