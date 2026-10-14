@@ -24,5 +24,5 @@ def run_command_in_packages(
             console.print(f"[green]✔ Success in {pkg_name}[/]")
         except subprocess.CalledProcessError:
             console.print(f"[red bold]✖ Failed in {pkg_name}[/]")
-            success = False
+            raise RuntimeError(f"Command failed in {pkg_name}")
     return success
