@@ -3,8 +3,9 @@ requires = ["setuptools>=61.0.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "zero-config-monorepo-cicd"
-version = "0.1.0"
+name = "monoci"
+
+version = "1.0.0"
 description = "Zero-config monorepo CI/CD setup"
 readme = "README.md"
 requires-python = ">=3.8"
