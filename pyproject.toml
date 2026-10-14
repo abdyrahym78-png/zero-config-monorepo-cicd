@@ -17,5 +17,5 @@ dependencies = [
 ]
 
 [project.scripts]
-monoci = "monoci.cli:main"
+monoci = "monoci.cli:app"
 
