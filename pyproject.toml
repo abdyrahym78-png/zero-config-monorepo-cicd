@@ -9,4 +9,7 @@ version = "1.0.0"
 description = "Zero-config Monorepo CI/CD CLI Tool"
 readme = "README.md"
 requires-python = ">=3.9"
-dependencies = []
+dependencies = [
+    "requests>=2.31.0",
+    "click>=8.1.0",
+]
