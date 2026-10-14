@@ -8,5 +8,5 @@ name = "monoci"
 version = "1.0.0"
 description = "Zero-config Monorepo CI/CD CLI Tool"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 dependencies = []
